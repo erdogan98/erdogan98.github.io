@@ -8,7 +8,7 @@ const Privacy = () => {
   const content = {
     en: {
       title: 'Privacy Policy',
-      lastUpdated: 'Last updated: January 2024',
+      lastUpdated: 'Last updated: December 2025',
       sections: [
         {
           heading: 'Information We Collect',
@@ -32,13 +32,13 @@ const Privacy = () => {
         },
         {
           heading: 'Contact Us',
-          text: 'If you have questions about this Privacy Policy, please contact us at contact@legalexcellence.com or +90 (212) 555-0100.',
+          text: 'If you have questions about this Privacy Policy, please contact us at sekerlioktay@gmail.com or +90 548 836 40 29.',
         },
       ],
     },
     tr: {
       title: 'Gizlilik Politikası',
-      lastUpdated: 'Son güncelleme: Ocak 2024',
+      lastUpdated: 'Son güncelleme: Aralık 2025',
       sections: [
         {
           heading: 'Topladığımız Bilgiler',
@@ -62,7 +62,7 @@ const Privacy = () => {
         },
         {
           heading: 'Bize Ulaşın',
-          text: 'Bu Gizlilik Politikası hakkında sorularınız varsa, lütfen contact@legalexcellence.com veya +90 (212) 555-0100 üzerinden bize ulaşın.',
+          text: 'Bu Gizlilik Politikası hakkında sorularınız varsa, lütfen sekerlioktay@gmail.com veya +90 548 836 40 29 üzerinden bize ulaşın.',
         },
       ],
     },
