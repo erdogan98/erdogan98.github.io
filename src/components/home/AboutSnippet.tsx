@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export function AboutSnippet() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   const values = [
     t('about.value1'),
@@ -48,10 +48,13 @@ export function AboutSnippet() {
             <div className="aspect-[4/3] bg-primary/10 border border-border overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center p-8">
-                  <p className="font-serif text-2xl text-primary italic">
-                    "Justice is the constant and perpetual will to allot to every man his due."
+                  <p className="font-serif text-xl text-primary italic leading-relaxed">
+                    {language === 'en' 
+                      ? '"My commitment to my clients is to provide transparent, solution-oriented, and professional legal support at every stage."'
+                      : '"Müvekkillerime taahhüdüm, her aşamada şeffaf, çözüm odaklı ve profesyonel hukuki destek sunmaktır."'
+                    }
                   </p>
-                  <p className="mt-4 text-muted-foreground">— Domitius Ulpianus</p>
+                  <p className="mt-4 text-muted-foreground">— Av. Oktay Şekerli</p>
                 </div>
               </div>
             </div>

@@ -9,14 +9,18 @@ const Contact = () => {
 
   const meta = {
     en: {
-      title: 'Contact Us | Legal Excellence',
-      description: 'Get in touch with our legal team for a consultation. Located in Istanbul, we serve clients throughout Turkey and internationally.',
+      title: 'Contact | Av. Oktay Şekerli - Attorney at Law in Lefkoşa',
+      description: 'Get in touch with Av. Oktay Şekerli for a legal consultation. Located in Lefkoşa, serving clients throughout Northern Cyprus in English and Turkish.',
     },
     tr: {
-      title: 'İletişim | Legal Excellence',
-      description: 'Danışmanlık için hukuk ekibimizle iletişime geçin. İstanbul\'da bulunan firmamız, Türkiye genelinde ve uluslararası alanda müvekkillere hizmet vermektedir.',
+      title: 'İletişim | Av. Oktay Şekerli - Lefkoşa Avukat',
+      description: 'Hukuki danışmanlık için Av. Oktay Şekerli ile iletişime geçin. Lefkoşa merkezli, Kuzey Kıbrıs genelinde Türkçe ve İngilizce hizmet.',
     },
   };
+
+  const phone = '+90 548 836 40 29';
+  const phoneClean = '905488364029';
+  const email = 'sekerlioktay@gmail.com';
 
   return (
     <Layout>
@@ -52,8 +56,8 @@ const Contact = () => {
                 </h2>
                 <p className="text-muted-foreground">
                   {language === 'en'
-                    ? 'Our team is ready to assist you with your legal needs. Reach out to schedule a consultation.'
-                    : 'Ekibimiz hukuki ihtiyaçlarınızda size yardımcı olmaya hazır. Danışmanlık randevusu için bize ulaşın.'}
+                    ? 'I am ready to assist you with your legal needs. Reach out to schedule a consultation.'
+                    : 'Hukuki ihtiyaçlarınızda size yardımcı olmaya hazırım. Danışmanlık randevusu için bana ulaşın.'}
                 </p>
               </div>
 
@@ -65,8 +69,9 @@ const Contact = () => {
                   <div>
                     <h3 className="font-medium text-foreground mb-1">{t('contact.address')}</h3>
                     <p className="text-muted-foreground text-sm">
-                      Levent Business District<br />
-                      Istanbul, Turkey 34330
+                      Posta Sokak No: 23<br />
+                      Piro İşhanı, Kat: 1, Daire No: 1<br />
+                      Lefkoşa, KKTC
                     </p>
                   </div>
                 </div>
@@ -76,9 +81,11 @@ const Contact = () => {
                     <Phone className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-foreground mb-1">Phone</h3>
-                    <a href="tel:+902125550100" className="text-muted-foreground text-sm hover:text-primary transition-colors">
-                      +90 (212) 555-0100
+                    <h3 className="font-medium text-foreground mb-1">
+                      {language === 'en' ? 'Phone' : 'Telefon'}
+                    </h3>
+                    <a href={`tel:${phoneClean}`} className="text-muted-foreground text-sm hover:text-primary transition-colors">
+                      {phone}
                     </a>
                   </div>
                 </div>
@@ -89,8 +96,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-medium text-foreground mb-1">Email</h3>
-                    <a href="mailto:contact@legalexcellence.com" className="text-muted-foreground text-sm hover:text-primary transition-colors">
-                      contact@legalexcellence.com
+                    <a href={`mailto:${email}`} className="text-muted-foreground text-sm hover:text-primary transition-colors">
+                      {email}
                     </a>
                   </div>
                 </div>
@@ -112,14 +119,26 @@ const Contact = () => {
                   <div>
                     <h3 className="font-medium text-foreground mb-1">WhatsApp</h3>
                     <a
-                      href="https://wa.me/902125550100"
+                      href={`https://wa.me/${phoneClean}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-muted-foreground text-sm hover:text-primary transition-colors"
                     >
-                      +90 (212) 555-0100
+                      {phone}
                     </a>
                   </div>
+                </div>
+              </div>
+
+              {/* Areas Served */}
+              <div className="pt-6 border-t border-border">
+                <h3 className="font-medium text-foreground mb-4">{t('about.areasServed')}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {['Lefkoşa', 'Girne', 'Gazimağusa', 'Güzelyurt', 'Lefke', 'İskele'].map((area) => (
+                    <span key={area} className="px-3 py-1 bg-primary/10 text-primary text-sm">
+                      {area}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -140,14 +159,14 @@ const Contact = () => {
       {/* Map */}
       <section className="h-96 bg-muted">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.6534891853!2d29.01015931541566!3d41.08114097929062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab5e5e75c1cb3%3A0x5e6e77f09b75b8d2!2sLevent%2C%20Istanbul!5e0!3m2!1sen!2str!4v1625000000000!5m2!1sen!2str"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.8!2d33.3597!3d35.1856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de17!2sLefko%C5%9Fa!5e0!3m2!1sen!2s!4v1625000000000!5m2!1sen!2s"
           width="100%"
           height="100%"
           style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Office Location"
+          title={language === 'en' ? 'Office Location - Lefkoşa' : 'Ofis Konumu - Lefkoşa'}
         />
       </section>
     </Layout>

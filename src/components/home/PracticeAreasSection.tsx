@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom';
-import { Building2, Gavel, Heart, Home, Shield, Plane, ArrowRight } from 'lucide-react';
+import { Shield, Heart, Landmark, Building2, Briefcase, Scale, FileText, Gavel, BadgeDollarSign, Home, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export function PracticeAreasSection() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   const areas = [
-    { icon: Building2, titleKey: 'practice.corporate.title', descKey: 'practice.corporate.desc', slug: 'corporate-law' },
-    { icon: Gavel, titleKey: 'practice.litigation.title', descKey: 'practice.litigation.desc', slug: 'litigation' },
+    { icon: Shield, titleKey: 'practice.criminal.title', descKey: 'practice.criminal.desc', slug: 'criminal-law' },
     { icon: Heart, titleKey: 'practice.family.title', descKey: 'practice.family.desc', slug: 'family-law' },
-    { icon: Home, titleKey: 'practice.real.title', descKey: 'practice.real.desc', slug: 'real-estate' },
-    { icon: Shield, titleKey: 'practice.criminal.title', descKey: 'practice.criminal.desc', slug: 'criminal-defense' },
-    { icon: Plane, titleKey: 'practice.immigration.title', descKey: 'practice.immigration.desc', slug: 'immigration' },
+    { icon: Landmark, titleKey: 'practice.estates.title', descKey: 'practice.estates.desc', slug: 'estates' },
+    { icon: Building2, titleKey: 'practice.admin.title', descKey: 'practice.admin.desc', slug: 'administrative-law' },
+    { icon: Briefcase, titleKey: 'practice.labor.title', descKey: 'practice.labor.desc', slug: 'employment-law' },
+    { icon: Scale, titleKey: 'practice.corporate.title', descKey: 'practice.corporate.desc', slug: 'corporate-law' },
   ];
 
   return (
@@ -30,7 +30,7 @@ export function PracticeAreasSection() {
           {areas.map((area, index) => (
             <Link
               key={index}
-              to={`/practice-areas/${area.slug}`}
+              to="/practice-areas"
               className="group p-8 bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
             >
               <div className="mb-4 p-3 bg-primary/10 inline-block">
@@ -43,10 +43,20 @@ export function PracticeAreasSection() {
                 {t(area.descKey)}
               </p>
               <span className="inline-flex items-center gap-2 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                Learn more <ArrowRight className="h-4 w-4" />
+                {language === 'en' ? 'Learn more' : 'Daha fazla'} <ArrowRight className="h-4 w-4" />
               </span>
             </Link>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link
+            to="/practice-areas"
+            className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+          >
+            {language === 'en' ? 'View all practice areas' : 'Tüm çalışma alanlarını görüntüle'}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

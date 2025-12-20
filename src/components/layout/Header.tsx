@@ -31,8 +31,10 @@ export function Header() {
         <Link to="/" className="flex items-center gap-3">
           <Scale className="h-8 w-8 text-primary" />
           <div className="flex flex-col">
-            <span className="font-serif text-xl font-semibold text-foreground">Legal Excellence</span>
-            <span className="text-xs text-muted-foreground tracking-wider uppercase">Attorneys at Law</span>
+            <span className="font-serif text-xl font-semibold text-foreground">Av. Oktay Şekerli</span>
+            <span className="text-xs text-muted-foreground tracking-wider uppercase">
+              {language === 'en' ? 'Attorney at Law' : 'Avukat'}
+            </span>
           </div>
         </Link>
 
