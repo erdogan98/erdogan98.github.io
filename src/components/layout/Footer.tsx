@@ -115,7 +115,8 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-primary-foreground/20">
           <p className="text-center text-sm opacity-70">
-            © {currentYear} Av. Oktay Şekerli. {t('footer.rights')}
+            © {currentYear} website built{" "}
+            by Erdogan Kervanli @fractalops. {t("footer.rights")}
           </p>
         </div>
       </div>
