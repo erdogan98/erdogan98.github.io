@@ -38,12 +38,16 @@ export function ContactForm() {
   });
 
   const matterTypes = [
-    { value: 'corporate', label: t('matter.corporate') },
-    { value: 'litigation', label: t('matter.litigation') },
-    { value: 'family', label: t('matter.family') },
-    { value: 'real', label: t('matter.real') },
     { value: 'criminal', label: t('matter.criminal') },
-    { value: 'immigration', label: t('matter.immigration') },
+    { value: 'family', label: t('matter.family') },
+    { value: 'estates', label: t('matter.estates') },
+    { value: 'admin', label: t('matter.admin') },
+    { value: 'labor', label: t('matter.labor') },
+    { value: 'corporate', label: t('matter.corporate') },
+    { value: 'insurance', label: t('matter.insurance') },
+    { value: 'contracts', label: t('matter.contracts') },
+    { value: 'compensation', label: t('matter.compensation') },
+    { value: 'ipc', label: t('matter.ipc') },
     { value: 'other', label: t('matter.other') },
   ];
 

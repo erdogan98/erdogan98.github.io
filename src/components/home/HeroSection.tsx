@@ -24,13 +24,13 @@ export function HeroSection() {
             {t('hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" variant="secondary" className="text-base">
+            <Button asChild size="lg" className="text-base bg-background text-foreground hover:bg-background/90">
               <Link to="/contact" className="inline-flex items-center gap-2">
                 {t('hero.cta')}
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="text-base border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+            <Button asChild size="lg" variant="outline" className="text-base border-primary-foreground/50 text-primary-foreground bg-transparent hover:bg-primary-foreground/10 hover:text-primary-foreground">
               <Link to="/practice-areas">
                 {t('hero.learnMore')}
               </Link>
