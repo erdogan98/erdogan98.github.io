@@ -1,9 +1,28 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-import path from "path";
-import { componentTagger } from "lovable-tagger";
 import tsconfigPaths from "vite-tsconfig-paths";
+import sitemap from "vite-plugin-sitemap";
 
 export default defineConfig({
-  plugins: [react(), tsconfigPaths()],
+  server: {
+    port: 8080,
+  },
+  plugins: [
+    react(),
+    tsconfigPaths(),
+    sitemap({
+      hostname: "https://www.oktaysekerli.com",
+      readable: true,
+      generateRobotsTxt: false,
+      dynamicRoutes: [
+        "/",
+        "/about",
+        "/practice-areas",
+        "/contact",
+        "/privacy",
+        "/terms",
+        "/cookies",
+      ],
+    }),
+  ],
 });
