@@ -159,14 +159,14 @@ const Contact = () => {
       {/* Map */}
       <section className="h-96 bg-muted">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.8!2d33.3597!3d35.1856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de17!2sLefko%C5%9Fa!5e0!3m2!1sen!2s!4v1625000000000!5m2!1sen!2s"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d815.4!2d33.3597!3d35.1856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDExJzA4LjIiTiAzM8KwMjEnMzQuOSJF!5e0!3m2!1sen!2s!4v1625000000000!5m2!1sen!2s&markers=color:red%7C35.1856,33.3597"
           width="100%"
           height="100%"
           style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title={language === 'en' ? 'Office Location - Lefkoşa' : 'Ofis Konumu - Lefkoşa'}
+          title={language === 'en' ? 'Office Location - Posta Sokak No: 23, Lefkoşa' : 'Ofis Konumu - Posta Sokak No: 23, Lefkoşa'}
         />
       </section>
     </Layout>

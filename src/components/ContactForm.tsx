@@ -24,7 +24,7 @@ type FormValues = z.infer<typeof formSchema>;
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -54,13 +54,25 @@ export function ContactForm() {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    // Build WhatsApp message
+    const matterLabel = matterTypes.find(m => m.value === data.matter)?.label || data.matter;
+    const message = language === 'en' 
+      ? `Hello, my name is ${data.name}.\n\nEmail: ${data.email}\nPhone: ${data.phone}\nMatter Type: ${matterLabel}\n\nMessage:\n${data.message}`
+      : `Merhaba, benim adım ${data.name}.\n\nE-posta: ${data.email}\nTelefon: ${data.phone}\nKonu Türü: ${matterLabel}\n\nMesaj:\n${data.message}`;
     
+    const phoneNumber = '905488364029';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Show success toast
     toast({
-      title: "Message Sent",
-      description: "We'll get back to you as soon as possible.",
+      title: language === 'en' ? "Redirecting to WhatsApp..." : "WhatsApp'a yönlendiriliyorsunuz...",
+      description: language === 'en' 
+        ? "You'll be able to send your message directly." 
+        : "Mesajınızı doğrudan gönderebileceksiniz.",
     });
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, '_blank');
     
     form.reset();
     setIsSubmitting(false);
