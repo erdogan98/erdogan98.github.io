@@ -25,7 +25,7 @@ export function CTASection() {
           <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
             <a href="tel:+902125550100" className="inline-flex items-center gap-2">
               <Phone className="h-5 w-5" />
-              +90 (212) 555-0100
+              +90 548 836 40 29
             </a>
           </Button>
         </div>
