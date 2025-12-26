@@ -8,7 +8,7 @@ const Terms = () => {
   const content = {
     en: {
       title: 'Terms of Service',
-      lastUpdated: 'Last updated: December 2025',
+      lastUpdated: 'Last updated: January 2024',
       sections: [
         {
           heading: 'Disclaimer',
@@ -38,7 +38,7 @@ const Terms = () => {
     },
     tr: {
       title: 'Kullanım Koşulları',
-      lastUpdated: 'Son güncelleme: Aralık 2025',
+      lastUpdated: 'Son güncelleme: Ocak 2024',
       sections: [
         {
           heading: 'Sorumluluk Reddi',
